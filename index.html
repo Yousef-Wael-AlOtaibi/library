@@ -3,9 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
+    <div id="books-container">
+        <div id="example-book" class="hidden book">
+            <p id="title">Example Title</p>
+                <div id="book-info">
+                    <p id="author">By author</p>
+                    <p id="pages">0 pages</p>
+                </div>
+            <button id="remove-btn">Delete</button>
+        </div>
+    </div>
+    <dialog id="book-dialog" class="hidden">
+        <form id="book-form">
+            <fieldset>
+                <legend>what's the book called?</legend>
+                <input type="text" id="title-input" required>
+            </fieldset>
+            <fieldset>
+                <legend>who wrote the book?</legend>
+                <input type="text" id="author-input" required>
+            </fieldset>
+            <fieldset>
+                <legend>How long is it?</legend>
+                <input type="number" id="pages-input" required>
+            </fieldset>
+            <fieldset>
+                <legend>Have you started it yet?</legend>
+                <label>Yes <input type='radio' name="started" value='yes' required></label>
+                <label>No <input type='radio' name="started" value="no" required></label>
+            </fieldset>
+            <button type="submit" id="add-btn">Add Book</button>
+        <button id="close-btn" type="button">X</button>
+        </form>
+    </dialog>
+    <button id="new-btn">New Book</button>
     <script src="script.js"></script>
 </body>
 </html>
