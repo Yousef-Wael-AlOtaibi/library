@@ -19,7 +19,7 @@ function addBookToLibrary(title, author, pages, description) {
 
 function createBookCard(book) {
     const bookCard = document.createElement('div');
-    const bookTitle = document.createElement('h3');
+    const bookTitle = document.createElement('h2');
     bookTitle.textContent = book.title;
     bookCard.append(bookTitle);
 
