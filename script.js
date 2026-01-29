@@ -1,8 +1,8 @@
 const library = [];
 const booksContainer = document.querySelector('.books-container');
 const newBookButton = document.querySelector('#new-book-button');
-const addBookButton = document.querySelector('#add-book-button')
 const dialog = document.querySelector('dialog');
+const dialogForm = document.querySelector('dialog form');
 function Book(title, author, pages, description) {
     this.title = title;
     this.author = author;
@@ -45,6 +45,20 @@ function displayBooks() {
 }
 
 newBookButton.addEventListener('click', () => dialog.showModal());
+
+function onSubmitDialogForm(event) {
+    event.preventDefault();
+    const titleInput = document.querySelector('#title');
+    const authorInput = document.querySelector('#author');
+    const pagesCountInput = document.querySelector('#pages-count')
+    const descriptionInput = document.querySelector('#description');
+    const hasReadBook = document.querySelector('#read-book');
+    addBookToLibrary(titleInput.value, authorInput.value, pagesCountInput.value, descriptionInput.value);
+    dialog.close();
+    displayBooks();
+}
+
+dialogForm.addEventListener('submit', onSubmitDialogForm);
 
 addBookToLibrary('atomic habits', 'James', 318, 'Small atomic efective impactful habits');
 displayBooks();
