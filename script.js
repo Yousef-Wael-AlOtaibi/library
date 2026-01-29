@@ -1,5 +1,8 @@
 const library = [];
 const booksContainer = document.querySelector('.books-container');
+const newBookButton = document.querySelector('#new-book-button');
+const addBookButton = document.querySelector('#add-book-button')
+const dialog = document.querySelector('dialog');
 function Book(title, author, pages, description) {
     this.title = title;
     this.author = author;
@@ -40,6 +43,8 @@ function displayBooks() {
         booksContainer.appendChild(book.card);
     })
 }
+
+newBookButton.addEventListener('click', () => dialog.showModal());
 
 addBookToLibrary('atomic habits', 'James', 318, 'Small atomic efective impactful habits');
 displayBooks();

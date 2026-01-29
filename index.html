@@ -9,9 +9,36 @@
 <body>
     <h1>Book Library</h1>
     <p>Store your books here</p>
+    <button id="new-book-button">New Book</button>
     <div class="books-container">
-        
+
     </div>
+    <dialog>
+        <form action="">
+            <h2>Book Info</h2>
+            <div class="">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="book-title">
+            </div>
+            <div class="">
+                <label for="author">Author</label>
+                <input type="text" id="author" name="book-author">
+            </div>
+            <div class="">
+                <label for="pages-count">Pages count</label>
+                <input type="number" name="pages-count" id="pages-count">
+            </div>
+            <div class="">
+                <label for="description">Description</label>
+                <textarea name="book-description" id="description" ></textarea>
+            </div>
+            <div class="">
+                <label for="read-book">Have you read this book?</label>
+                <input type="checkbox" id="read-book" name="has-read-book">
+            </div>
+            <button id="add-book-button">Add Book</button>
+        </form>
+    </dialog>
     <script src="./script.js"></script>
 </body>
 </html>
