@@ -1,5 +1,5 @@
 const library = [];
-
+const booksContainer = document.querySelector('.books-container');
 function Book(title, author, pages, description) {
     this.title = title;
     this.author = author;
@@ -33,3 +33,13 @@ function createBookCard(book) {
     bookCard.append(bookPageCount);
     return bookCard;
 }
+
+function displayBooks() {
+    booksContainer.replaceChildren('')
+    library.forEach(book => {
+        booksContainer.appendChild(book.card);
+    })
+}
+
+addBookToLibrary('atomic habits', 'James', 318, 'Small atomic efective impactful habits');
+displayBooks();
