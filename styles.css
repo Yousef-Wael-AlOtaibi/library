@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(35, 35, 35);
+    font-family: sans-serif;
+}
+
+.subtitle {
+    color: rgb(156, 156, 156);
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    color: rgb(216, 216, 216);
+    text-transform: capitalize;
+}
+
