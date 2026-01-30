@@ -23,7 +23,7 @@ function addBookToLibrary(title, author, pages, description, readStatus) {
 
 function removeBook(id) {
     const bookObject = library.find(book => book.id === id);
-    library.splice(library.indexOf(bookObject), library.indexOf(bookObject) + 1);
+    library.splice(library.indexOf(bookObject), 1);
 }
 
 function createBookCard(book) {
