@@ -12,6 +12,10 @@ function Book(title, author, pages, description, readStatus) {
     this.readStatus = readStatus;
 };
 
+Book.prototype.toggleReadStatus = function() {
+    this.readStatus = !this.readStatus;
+}
+
 function addBookToLibrary(title, author, pages, description, readStatus) {
     const book = new Book(title, author, pages, description, readStatus);
     library.push(book);
@@ -50,6 +54,15 @@ function createBookCard(book) {
     bookCard.appendChild(details);
 
     const InteractionContainer = document.createElement('div');
+
+    const toggleReadStatusButton = document.createElement('button');
+    toggleReadStatusButton.textContent = 'Read Book';
+    toggleReadStatusButton.addEventListener('click', ()=> {
+        book.toggleReadStatus();
+        toggleReadStatusButton.textContent = book.readStatus? 'Unread Book' : 'Read Book';
+        hasReadStat.textContent = book.readStatus? 'Have read' : `Haven't read`;
+    });
+    InteractionContainer.appendChild(toggleReadStatusButton);
     
     const removeBookButton = document.createElement('button');
     removeBookButton.textContent = 'Remove Book';
