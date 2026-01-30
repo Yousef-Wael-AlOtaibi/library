@@ -18,3 +18,8 @@ h2 {
     text-transform: capitalize;
 }
 
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 1000px;
+}
