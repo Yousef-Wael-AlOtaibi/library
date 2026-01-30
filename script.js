@@ -17,6 +17,11 @@ function addBookToLibrary(title, author, pages, description, readStatus) {
     library.push(book);
 };
 
+function removeBook(id) {
+    const bookObject = library.find(book => book.id === id);
+    library.splice(library.indexOf(bookObject), library.indexOf(bookObject) + 1);
+}
+
 function createBookCard(book) {
     const bookCard = document.createElement('div');
     bookCard.dataset.id = book.id;
@@ -43,6 +48,19 @@ function createBookCard(book) {
     details.appendChild(bookPageCount);
 
     bookCard.appendChild(details);
+
+    const InteractionContainer = document.createElement('div');
+    
+    const removeBookButton = document.createElement('button');
+    removeBookButton.textContent = 'Remove Book';
+    removeBookButton.addEventListener('click', () => {
+        removeBook(book.id);
+        displayBooks();
+    });
+    InteractionContainer.appendChild(removeBookButton);
+
+    bookCard.appendChild(InteractionContainer);
+
     return bookCard;
 }
 
