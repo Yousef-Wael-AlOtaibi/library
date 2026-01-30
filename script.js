@@ -10,7 +10,6 @@ function Book(title, author, pages, description, readStatus) {
     this.id = crypto.randomUUID();
     this.description = description;
     this.readStatus = readStatus;
-    this.card = createBookCard(this);
 };
 
 function addBookToLibrary(title, author, pages, description, readStatus) {
@@ -20,6 +19,7 @@ function addBookToLibrary(title, author, pages, description, readStatus) {
 
 function createBookCard(book) {
     const bookCard = document.createElement('div');
+    bookCard.dataset.id = book.id;
     const bookTitle = document.createElement('h2');
     bookTitle.textContent = book.title;
     bookCard.appendChild(bookTitle);
@@ -32,7 +32,7 @@ function createBookCard(book) {
     bookDescription.textContent = book.description;
     bookCard.appendChild(bookDescription);
 
-    const details = document.createElement('div');
+    const details = document.createElement('p');
 
     const hasReadStat = document.createElement('span');
     hasReadStat.textContent = book.readStatus?  `Have read` : `Haven't read`;
@@ -49,7 +49,8 @@ function createBookCard(book) {
 function displayBooks() {
     booksContainer.replaceChildren('')
     library.forEach(book => {
-        booksContainer.appendChild(book.card);
+        const bookCard = createBookCard(book);
+        booksContainer.appendChild(bookCard);
     })
 }
 
