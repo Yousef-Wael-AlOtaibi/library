@@ -29,19 +29,23 @@ function removeBook(id) {
 function createBookCard(book) {
     const bookCard = document.createElement('div');
     bookCard.dataset.id = book.id;
+
     const bookTitle = document.createElement('h2');
     bookTitle.textContent = book.title;
     bookCard.appendChild(bookTitle);
 
-    const bookAuthor = document.createElement('p');
-    bookAuthor.textContent = `By ${book.author}`;
-    bookCard.appendChild(bookAuthor);
-
     const bookDescription = document.createElement('p');
     bookDescription.textContent = book.description;
+    bookDescription.className = 'description';
     bookCard.appendChild(bookDescription);
 
-    const details = document.createElement('p');
+    const bookAuthor = document.createElement('p');
+    bookAuthor.textContent = `By ${book.author}`;
+    bookAuthor.className = 'author';
+    bookCard.appendChild(bookAuthor);
+
+    const details = document.createElement('div');
+    details.className = 'details';
 
     const hasReadStat = document.createElement('span');
     hasReadStat.textContent = book.readStatus?  `Have read` : `Haven't read`;
@@ -53,7 +57,8 @@ function createBookCard(book) {
 
     bookCard.appendChild(details);
 
-    const InteractionContainer = document.createElement('div');
+    const interactionContainer = document.createElement('div');
+    interactionContainer.className = 'interaction-container';
 
     const toggleReadStatusButton = document.createElement('button');
     toggleReadStatusButton.textContent = 'Read Book';
@@ -62,7 +67,7 @@ function createBookCard(book) {
         toggleReadStatusButton.textContent = book.readStatus? 'Unread Book' : 'Read Book';
         hasReadStat.textContent = book.readStatus? 'Have read' : `Haven't read`;
     });
-    InteractionContainer.appendChild(toggleReadStatusButton);
+    interactionContainer.appendChild(toggleReadStatusButton);
     
     const removeBookButton = document.createElement('button');
     removeBookButton.textContent = 'Remove Book';
@@ -70,9 +75,9 @@ function createBookCard(book) {
         removeBook(book.id);
         displayBooks();
     });
-    InteractionContainer.appendChild(removeBookButton);
+    interactionContainer.appendChild(removeBookButton);
 
-    bookCard.appendChild(InteractionContainer);
+    bookCard.appendChild(interactionContainer);
 
     return bookCard;
 }
@@ -101,5 +106,8 @@ function onSubmitDialogForm(event) {
 
 dialogForm.addEventListener('submit', onSubmitDialogForm);
 
+addBookToLibrary('atomic habits', 'James', 318, 'Small atomic efective impactful habits', false);
+addBookToLibrary('atomic habits', 'James', 318, 'Small atomic efective impactful habits', false);
+addBookToLibrary('atomic habits', 'James', 318, 'Small atomic efective impactful habits', false);
 addBookToLibrary('atomic habits', 'James', 318, 'Small atomic efective impactful habits', false);
 displayBooks();
