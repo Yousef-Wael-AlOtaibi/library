@@ -107,7 +107,5 @@ function onSubmitDialogForm(event) {
 dialogForm.addEventListener('submit', onSubmitDialogForm);
 
 addBookToLibrary('atomic habits', 'James', 318, 'Small atomic efective impactful habits', false);
-addBookToLibrary('atomic habits', 'James', 318, 'Small atomic efective impactful habits', false);
-addBookToLibrary('atomic habits', 'James', 318, 'Small atomic efective impactful habits', false);
-addBookToLibrary('atomic habits', 'James', 318, 'Small atomic efective impactful habits', false);
+addBookToLibrary('Diary of a Wimpy Kid', 'Jeff Kinney', 224, 'An American illustrated children\'s novel series and media franchise.', false);
 displayBooks();
