@@ -3,24 +3,47 @@ body {
     font-family: sans-serif;
 }
 
-.subtitle {
-    color: rgb(156, 156, 156);
+.subtitle,
+.description,
+.author {
+    color: rgb(199, 199, 199);
     text-align: center;
 }
 
 h1 {
     color: white;
     text-align: center;
+    text-transform: capitalize;
 }
 
 h2 {
     color: rgb(216, 216, 216);
     text-transform: capitalize;
+    text-align: center;
 }
 
 .books-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    max-width: 1000px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    width: clamp(250px, 90%, 1000px);
     margin: auto;
+    gap: 2rem;
+
+}
+
+.books-container > div {
+    background-color: rgb(32, 32, 32);
+    border: 2px solid grey;
+    border-radius: 20px;
+}
+
+.details {
+    display: flex;
+    gap: .3rem;
+    margin: .5rem;
+    color: rgb(156, 156, 156);
+}
+
+.author {
+    font-weight: bold;
 }
