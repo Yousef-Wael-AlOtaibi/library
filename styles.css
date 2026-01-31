@@ -12,7 +12,6 @@ body {
 
 h1 {
     color: white;
-    text-align: center;
     text-transform: capitalize;
 }
 
@@ -62,4 +61,13 @@ h2 {
     padding: .3rem;
     border-radius: 10px;
     background-color: rgb(45, 45, 45);
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+#new-book-button {
+    margin-left: auto;
 }
