@@ -20,27 +20,30 @@
     <dialog>
         <form action="">
             <h2>Book Info</h2>
-            <div class="">
+            <div class="input-container">
                 <label for="title">Title</label>
-                <input type="text" id="title" name="book-title" required>
+                <input type="text" id="title" name="book-title" placeholder="e.g. Diary of a Wimpy Kid" required>
             </div>
-            <div class="">
+            <div class="input-container">
                 <label for="author">Author</label>
-                <input type="text" id="author" name="book-author" required>
+                <input type="text" id="author" name="book-author" placeholder="e.g. Jeff Kinney" required>
             </div>
-            <div class="">
-                <label for="pages-count">Pages count</label>
-                <input type="number" name="pages-count" id="pages-count" required>
+            <div class="input-container">
+                <label for="pages-count">Pages</label>
+                <input type="number" name="pages-count" id="pages-count" placeholder="e.g. 224" required>
             </div>
-            <div class="">
-                <label for="description">Description</label>
-                <textarea name="book-description" id="description"></textarea>
+            <div class="input-container">
+                <label for="description">About</label>
+                <textarea name="book-description" id="description" placeholder="e.g. An American illustrated children's novel series and media franchise." required></textarea>
             </div>
-            <div class="">
+            <div class="input-container">
                 <label for="read-book">Have you read this book?</label>
                 <input type="checkbox" id="read-book" name="has-read-book">
             </div>
-            <button id="add-book-button">Add Book</button>
+
+            <div class="input-container">
+                <button id="add-book-button">Add Book</button>
+            </div>
         </form>
     </dialog>
     <script src="./script.js"></script>
