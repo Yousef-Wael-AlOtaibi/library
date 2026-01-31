@@ -78,3 +78,38 @@ header {
     padding: .5rem;
     border: 2px solid grey;
 }
+
+dialog {
+    background-color: rgb(28, 28, 28);
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+form {
+    padding: 1rem;
+    padding-bottom: 0;
+    margin: auto;
+}
+
+form > h2 {
+    margin-top: 0;
+}
+
+.input-container {
+    margin-bottom: .5rem;
+}
+
+form label {
+    color: rgb(210, 210, 210);
+    padding-right: .5rem;
+}
+
+label + textarea {
+    vertical-align: top;
+}
+
+#add-book-button {
+    margin: auto;
+    display: block;
+    margin-top: 1rem;
+}
