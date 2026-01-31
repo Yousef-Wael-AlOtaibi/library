@@ -1,6 +1,9 @@
 body {
     background-color: rgb(35, 35, 35);
     font-family: sans-serif;
+    display: grid;
+    padding: 2rem;
+    row-gap: 1rem;
 }
 
 .subtitle,
@@ -24,10 +27,7 @@ h2 {
 .books-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    width: clamp(250px, 90%, 1000px);
-    margin: auto;
     gap: 2rem;
-
 }
 
 .books-container > div {
@@ -65,9 +65,10 @@ h2 {
 
 header {
     display: flex;
-    align-items: center;
+    align-items: end;
 }
 
 #new-book-button {
     margin-left: auto;
+    margin-bottom: 1rem;
 }
