@@ -108,6 +108,10 @@ label + textarea {
     vertical-align: top;
 }
 
+textarea {
+    font-family: inherit;
+}
+
 #add-book-button {
     margin: auto;
     display: block;
