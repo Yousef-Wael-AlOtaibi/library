@@ -117,3 +117,7 @@ textarea {
     display: block;
     margin-top: 1rem;
 }
+
+.details > span:first-child::after {
+    content: ' |';
+}
