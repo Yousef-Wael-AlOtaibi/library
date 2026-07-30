@@ -3,6 +3,9 @@ const booksContainer = document.querySelector('.books-container');
 const newBookButton = document.querySelector('#new-book-button');
 const dialog = document.querySelector('dialog');
 const dialogForm = document.querySelector('dialog form');
+import { validateNewBookTitle, validateNewBookForm } from "./validate.js";
+import { validateNewBookAuthor, validateNewBookDescription } from "./validate.js";
+import { validateNewBookPage } from "./validate.js";
 class Book {
     constructor(title, author, pages, description, readStatus) {
         this.title = title;
@@ -94,18 +97,27 @@ function displayBooks() {
 
 newBookButton.addEventListener('click', () => dialog.showModal());
 
+const titleInput = document.querySelector('#title');
+const authorInput = document.querySelector('#author');
+const pagesCountInput = document.querySelector('#pages-count')
+const descriptionInput = document.querySelector('#description');
+const hasReadBook = document.querySelector('#read-book');
+
 function onSubmitDialogForm(event) {
     event.preventDefault();
-    const titleInput = document.querySelector('#title');
-    const authorInput = document.querySelector('#author');
-    const pagesCountInput = document.querySelector('#pages-count')
-    const descriptionInput = document.querySelector('#description');
-    const hasReadBook = document.querySelector('#read-book');
+    if(!validateNewBookForm()) {
+        console.log('The data you entered is trash!')
+        return
+    }
     addBookToLibrary(titleInput.value, authorInput.value, pagesCountInput.value, descriptionInput.value, hasReadBook.checked);
     dialog.close();
     displayBooks();
 }
 
+titleInput.addEventListener('input', validateNewBookTitle)
+authorInput.addEventListener('input', validateNewBookAuthor)
+pagesCountInput.addEventListener('input', validateNewBookPage)
+descriptionInput.addEventListener('input', validateNewBookDescription)
 dialogForm.addEventListener('submit', onSubmitDialogForm);
 
 addBookToLibrary('atomic habits', 'James', 318, 'Small atomic efective impactful habits', false);
