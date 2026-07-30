@@ -121,3 +121,11 @@ textarea {
 .details > span:first-child::after {
     content: ' |';
 }
+
+input:user-invalid, textarea:user-invalid {
+    border: 1px solid red;
+}
+
+input:user-valid, textarea:user-valid {
+    border: 1px solid lime;
+}
